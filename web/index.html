@@ -1,0 +1,175 @@
+ <html>
+   <body>
+     <h1> Servicio de Mapas y SLD </h1>
+     
+     <h2> Metadatos </h2>
+     
+     Consulta: <code> /WS-Map/metadatos </code>
+     
+     <h2> SLD </h2>
+     
+     Consulta: <code> WS-Mapas/resources/sld?json= </code>
+     
+     <table border="1">
+       
+       <tr>
+         <td>id</td>
+         <td>id único de la capa</td>
+       </tr>
+       
+       <tr>
+         <td>filtro</td>
+         <td>
+           JSONArray de filtros, de estar vacio el arreglo se crea un sld generico</td>
+         </tr>
+         
+         <tr>
+           <td>atributo</td>
+           <td>
+
+             Es el campo de la base de datos sobre el que se aplicará
+             el filtro. Por ejmplo: se puede crear un filtro que sea
+             coloreal todo los aeropuertos que sean de tipo
+             internacional en una gama de verdes usando el atributo
+             "objectid". Esto nos dara un mapa donde a cada uno de los
+             "objectid" tendrá su propio color de la gama
+             
+           </td> 
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td></td>
+         </tr>
+         
+         
+       </table>
+       
+       <pre>
+         
+         {
+         "id":"ug1",
+         "filtros":[
+      {"atributo":"objectid",
+      "seleccionador":"DISTINCT",
+      "condicion":"tipo='Internacional'",
+      "gama":{
+           "borde":["ff0000","0000ff"],
+           "relleno":[],
+           "tonos":10},
+      "opacidadBorde":0.5,
+      "opacidadRelleno":1,
+      "figura":"triangulo",
+      "anchiFigura":30
+      },{
+      "atributo":"tipo",
+      "seleccionador":"ALL",
+      "condicion":"tipo='Nacional'",
+      "gama":{
+           "borde":["ff3300","ff0022"],
+           "relleno":["335599","aaff00"],
+           "tonos":10},
+      "opacidadBorde":0.5,
+      "opacidadRelleno":0.5,
+      "figura":"cruz",
+      "anchiFigura":15
+      }
+  ]
+}
+</pre>
+
+
+sld?json=
+{"id":"ug1",
+ "alto":432,
+ "ancho":800,
+  "bbox":[-128.2,-74,8.2,37.5],
+  "filtros":[{"anchoBorde":2,
+              "anchiFigura":15,
+	      "atributo":"tipo",
+	  f    "colorBorde":"330000",
+	      "colorRelleno":"0000ff",
+	      "condicion":"tipo='Internacional'",
+	      "opacidadBorde":0.5,
+	      "opacidadRelleno":0.5,
+	      "figura":"x"
+	      },
+              {"anchoBorde":2,
+	       "anchiFigura":15,
+	       "atributo":"tipo",
+	       "colorBorde":"bbb000",
+	       "colorRelleno":"bb4433",
+	       "condicion":"tipo='Nacional'",
+	       "opacidadBorde":0.5,
+	       "opacidadRelleno":0.5,
+	       "figura":"cruz"
+	      }
+             ]
+}
+   </body>
+ </html>
